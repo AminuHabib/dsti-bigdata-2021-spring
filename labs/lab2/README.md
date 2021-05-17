@@ -11,7 +11,7 @@ Big Data Ecosystem
 
 ### Copy files to HDFS
 
-Using the official [HDFS Commands Guide](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HDFSCommands.html):
+Using the official [HDFS FS Commands Guide](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html):
 
 1. Create a directory named after your username in your group HDFS directory. E.g. `/education/dsti/big-data/2021/spring/USERNAME`
 2. Create a subdirectory `lab2` in the directory created in 1.
