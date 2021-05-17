@@ -13,7 +13,7 @@ Big Data Ecosystem
 
 Using the official [HDFS Commands Guide](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HDFSCommands.html):
 
-1. Create a directory named after your username in your group HDFS directory. E.g. `/education/ece/big-data/2020/fall/bda/gr1/USERNAME`
+1. Create a directory named after your username in your group HDFS directory. E.g. `/education/dsti/big-data/2021/spring/USERNAME`
 2. Create a subdirectory `lab2` in the directory created in 1.
 3. Create a file named `sentence1.txt` on the local file system and write a sentence inside that file
 4. Copy the file to your `lab2` HDFS directory
@@ -93,7 +93,7 @@ The WordCount example is also located in the MapReduce example JAR. It takes sev
 2. Run the command (replace `$USERNAME`...):
    ```sh
    yarn jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-mapreduce-examples-3.1.1.3.1.0.0-78.jar \
-    wordcount /education/ece/big-data/2020/fall/bda/resources/lab2 \
-    /education/ece/big-data/2020/fall/bda/gr1/$USERNAME/lab2/output-moby-dick
+    wordcount /education/dsti/big-data/2021/spring/resources/lab2 \
+    /education/dsti/big-data/2021/spring/$USERNAME/lab2/output-moby-dick
    ```
 3. Check out the output directory
