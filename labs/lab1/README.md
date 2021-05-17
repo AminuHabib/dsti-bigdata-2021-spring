@@ -31,7 +31,7 @@ You should have received an email from Adaltas containing a .ovpn file that you 
 Before asking for help:
 
 - Check the VPN client logs for errors. Use Google to understand what is going on
-- Check if you have a DNS issue, ping the edge server using its IP address instead of its FQDN: ping 10.0.0.63
+- Check if you have a DNS issue, ping the edge server using its IP address instead of its FQDN: `ping 10.0.0.63`
 - Check that your client is well installed
 
 If still having trouble, contact your teacher via email using the tag `[DSTI][VPN]` and join:
