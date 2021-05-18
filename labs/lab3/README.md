@@ -26,7 +26,7 @@ uncompromised   1
    ```
 2. Go to the `labs/lab3/code` directory:
    ```sh
-   cd dsti-bigdata-2021-spring/labs/lab3/code
+   cd dsti-bigdata-2021-spring/labs/lab3/word_count
    ```
 3. Take a look at the `word_count/mapper.py` and `word_count/reducer.py` files. Tip: open with `vim` for syntax highlighting.
 4. Take a look at the input we will use for the MapReduce in HDFS at `/education/dsti/big-data/2021/spring/resources/lab3/mapred-input`
@@ -54,3 +54,7 @@ Design a MapReduce job by defining:
 
 1. Implement the `most_frequent` MapReduce job in Python. Use the `word_count` mapper and reducer as inspiration.
 2. Run your job. Specify `-D mapreduce.job.reduces=1` to avoid troubles.
+
+### (Bonus) Run the WordCount as a real MapReduce app using Java
+
+[MapReduce Tutorial](https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html)
