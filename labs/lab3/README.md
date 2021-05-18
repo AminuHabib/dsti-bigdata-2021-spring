@@ -57,4 +57,6 @@ Design a MapReduce job by defining:
 
 ### (Bonus) Run the WordCount as a real MapReduce app using Java
 
-[MapReduce Tutorial](https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html)
+Official documentation: [MapReduce Tutorial](https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html)
+
+Java IDE: [IntelliJ IDEA](https://www.jetbrains.com/idea/download)
