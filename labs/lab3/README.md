@@ -24,9 +24,9 @@ uncompromised   1
    ```sh
    git clone https://github.com/adaltas/dsti-bigdata-2021-spring.git
    ```
-2. Go to the `labs/lab3/code` directory:
+2. Go to the `labs/lab3` directory:
    ```sh
-   cd dsti-bigdata-2021-spring/labs/lab3/word_count
+   cd dsti-bigdata-2021-spring/labs/lab3
    ```
 3. Take a look at the `word_count/mapper.py` and `word_count/reducer.py` files. Tip: open with `vim` for syntax highlighting.
 4. Take a look at the input we will use for the MapReduce in HDFS at `/education/dsti/big-data/2021/spring/resources/lab3/mapred-input`
