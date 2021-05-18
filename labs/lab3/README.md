@@ -35,10 +35,10 @@ uncompromised   1
    mapred streaming -D mapreduce.job.reduces=2 \
      -files word_count/mapper.py,word_count/reducer.py \
      -input /education/dsti/big-data/2021/spring/resources/lab3/mapred-input \
-     -output /education/dsti/big-data/2021/spring/$USERNAME/lab3/word-count \
+     -output /education/dsti/big-data/2021/spring/$USER/lab3/word-count \
      -mapper "python3 mapper.py" -reducer "python3 reducer.py"
    ```
-6. Check the output at `/education/dsti/big-data/2021/spring/$USERNAME/lab3/word-count`
+6. Check the output at `/education/dsti/big-data/2021/spring/$USER/lab3/word-count`
 
 ### Design a MapReduce job to get the most frequent word
 
