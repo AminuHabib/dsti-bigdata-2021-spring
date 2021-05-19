@@ -1,4 +1,4 @@
-SET hivevar:username=gauthier;
+-- SET hivevar:username=gauthier;
 INSERT OVERWRITE TABLE dsti_2021_spring_1.${username}_nyc_drivers
 PARTITION (import_date)
 SELECT
@@ -11,4 +11,4 @@ SELECT
   wage_plan,
   import_date
 FROM dsti_2021_spring_1.${username}_nyc_drivers_ext
-WHERE import_date = current_date;
+WHERE import_date = "${importDate}";
