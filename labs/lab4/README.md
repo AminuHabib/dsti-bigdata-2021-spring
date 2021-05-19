@@ -14,7 +14,7 @@ For this lab we will be using a very small dataset of NYC taxi drivers.
 
 Using the official [Hive Data Definition Langage](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL):
 
-1. Using the HDFS CLI, take a look at the data used for this lab at `/education/dsti/big-data/2021/spring/resources/lab4/nyc_drivers/drivers.csv`
+1. Using the HDFS CLI, take a look at the data used for this lab at `/education/dsti/big-data/2021/spring/resources/lab4/nyc_drivers/import_date=2021-05-19/drivers.csv`
 2. Copy the `nyc_drivers` folder to your user directory in HDFS:
    ```sh
    hdfs dfs -mkdir -p "/education/dsti/big-data/2021/spring/$USER/lab4"
@@ -32,6 +32,7 @@ Using the official [Hive Data Definition Langage](https://cwiki.apache.org/confl
    STORED AS TEXTFILE
    LOCATION -- COMPLETE HERE
    TBLPROPERTIES ('skip.header.line.count'='1');
+   MSCK REPAIR TABLE dsti_2021_spring_1.${username}_nyc_drivers_ext;
    ```
 5. Check that the table is correctly created by selecting all the data in it. **If you see only `NULL` values, your schema is not correct.**
 
@@ -47,7 +48,7 @@ STORED AS ORC;
 1. Create a managed ORC table (**not external**) that must have the same schema as the external table created above (`${username}_nyc_drivers_ext`) but with:
    1. The `_ext` prefix removed from the name: `${username}_nyc_drivers`
    2. The column `name` devided into `first_name` and `last_name`
-   3. The columne `location` renamed as `address` (because `LOCATION` is a Hive keyword)
+   3. The column `location` renamed as `address` (because `LOCATION` is a Hive keyword)
    4. The column `certified` as a `BOOLEAN`
 2. Check that your table was created using the HDFS CLI at `/warehouse/tablespace/managed/hive/dsti_2021_spring_1.db/$USER_nyc_drivers` (should be empty)
 
