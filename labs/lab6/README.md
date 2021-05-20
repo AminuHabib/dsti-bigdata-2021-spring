@@ -39,7 +39,7 @@ The Oozie workflow is composed of:
    1. Find the action `Ext ID` (e.g. `job_1602801542108_7429`)
    2. Use the YARN CLI to get the application logs (replace `job_` by `application_`):
       ```sh
-      yarn logs -applicationId application_1602801542108_7429 | grep -P '^LogType:stderr' -A 100
+      yarn logs -applicationId application_1602801542108_7429 | grep -P '^LogType:stderr' -A 200 | grep 'Connected to: Apache Hive' -A 100
       ```
 
 ### TO DO
