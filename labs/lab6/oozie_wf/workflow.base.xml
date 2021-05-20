@@ -17,7 +17,7 @@
     </credential>
   </credentials>
 
-  <start to = "create_csv_table" />
+  <start to="create_csv_table"/>
 
   <!-- 
     Some HDFS actions could be done before.
@@ -25,22 +25,22 @@
     You need to move/copy it to the csv table folder.
   -->
 
-  <action name = "create_csv_table" cred="hive-creds">
-    <hive2 xmlns = "uri:oozie:hive2-action:0.2">
+  <action name="create_csv_table" cred="hive-creds">
+    <hive2 xmlns="uri:oozie:hive2-action:0.2">
       <!-- Complete here -->
       <param>username=${username}</param>
     </hive2>
-    <ok to = "end" />
-    <error to = "kill_job" />
+    <ok to="end"/>
+    <error to="kill_job"/>
   </action>
 
   <!-- Rest of the steps here  -->
 
 
 
-  <kill name = "kill_job">
+  <kill name="kill_job">
     <message>Job failed</message>
   </kill>
 
-  <end name = "end" />
+  <end name="end"/>
 </workflow-app>
