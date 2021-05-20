@@ -43,3 +43,17 @@ The Oozie workflow is composed of:
 5. Add actions to the workflow:
    1. Create the ORC drivers table if it does not exist
    2. Insert new data from the CSV table to the ORC table
+
+### How to check Hive action logs
+
+1. Open the Oozie web UI with Firefox http://oozie-1.au.adaltas.cloud:11000/oozie
+2. Find the YARN application URL:
+   1. Open your job
+   2. Open the action in `ERROR` state
+   3. Find the YARN applictaion URL in the `Console URL` field
+3. Read the logs on the MapReduce UI:
+   1. Click on the `Map` link
+   2. Click on the `task_xxxxxxxxxxxxx_xxxx_m_000000` link
+   3. Click on the `logs` link
+   4. Scroll to find the `stderr` section
+   5. `Click here for the full log.`
