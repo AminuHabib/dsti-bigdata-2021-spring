@@ -1,4 +1,4 @@
-<workflow-app xmlns = "uri:oozie:workflow:0.4" name = "drivers_ingestion">
+<workflow-app xmlns="uri:oozie:workflow:0.4" name="drivers_ingestion">
   <global>
     <job-tracker>${jobTracker}</job-tracker>
     <name-node>${nameNode}</name-node>
@@ -31,11 +31,30 @@
       <script>scripts/create_drivers_ext.hql</script>
       <param>username=${username}</param>
     </hive2>
-    <ok to="end"/>
+    <ok to="create_orc_table"/>
     <error to="kill_job"/>
   </action>
 
-  <!-- Rest of the steps here -->
+  <action name="create_orc_table" cred="hive-creds">
+    <hive2 xmlns="uri:oozie:hive2-action:0.2">
+      <jdbc-url>${jdbcUrl}</jdbc-url>
+      <script>scripts/create_drivers.hql</script>
+      <param>username=${username}</param>
+    </hive2>
+    <ok to="copy_new_drivers"/>
+    <error to="kill_job"/>
+  </action>
+
+  <action name="copy_new_drivers" cred="hive-creds">
+    <hive2 xmlns="uri:oozie:hive2-action:0.2">
+      <jdbc-url>${jdbcUrl}</jdbc-url>
+      <script>scripts/copy_new_drivers.hql</script>
+      <param>username=${username}</param>
+      <param>importDate=${importDate}</param>
+    </hive2>
+    <ok to="end"/>
+    <error to="kill_job"/>
+  </action>
 
   <kill name="kill_job">
     <message>Job failed</message>

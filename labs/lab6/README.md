@@ -47,7 +47,7 @@ The Oozie workflow is composed of:
 ### How to check Hive action logs
 
 1. Open the Oozie web UI with Firefox http://oozie-1.au.adaltas.cloud:11000/oozie
-2. Find the YARN application URL:
+2. Find the MapReduce application URL:
    1. Open your job
    2. Open the action in `ERROR` state
    3. Find the YARN applictaion URL in the `Console URL` field
