@@ -29,10 +29,18 @@ The Oozie workflow is composed of:
    ```sh
    oozie job -run -config oozie_wf/job.properties -oozie http://oozie-1.au.adaltas.cloud:11000/oozie
    ```
-3. To get the status of the job from the CLI
-   ```sh
-   oozie job -info 0000040-201011090406050-oozie-oozi-W -oozie http://oozie-1.au.adaltas.cloud:11000/oozie
-   ```
+3. To get the status of the job:
+   1. From the CLI:
+      ```sh
+      oozie job -info 0000040-201011090406050-oozie-oozi-W -oozie http://oozie-1.au.adaltas.cloud:11000/oozie
+      ```
+   2. From the web UI: http://oozie-1.au.adaltas.cloud:11000/oozie
+4. (With the CLI) To get appliction logs:
+   1. Find the action `Ext ID` (e.g. `job_1602801542108_7429`)
+   2. Use the YARN CLI to get the application logs (replace `job_` by `application_`):
+      ```sh
+      yarn logs -applicationId application_1602801542108_7429 | grep -P '^LogType:stderr' -A 200 | grep 'Connected to: Apache Hive' -A 100
+      ```
 
 ### TO DO
 
@@ -47,7 +55,7 @@ The Oozie workflow is composed of:
 ### How to check Hive action logs
 
 1. Open the Oozie web UI with Firefox http://oozie-1.au.adaltas.cloud:11000/oozie
-2. Find the YARN application URL:
+2. Find the MapReduce application URL:
    1. Open your job
    2. Open the action in `ERROR` state
    3. Find the YARN applictaion URL in the `Console URL` field
