@@ -27,16 +27,15 @@
 
   <action name="create_csv_table" cred="hive-creds">
     <hive2 xmlns="uri:oozie:hive2-action:0.2">
-      <!-- Complete here -->
+      <jdbc-url>${jdbcUrl}</jdbc-url>
+      <script>scripts/create_drivers_ext.hql</script>
       <param>username=${username}</param>
     </hive2>
     <ok to="end"/>
     <error to="kill_job"/>
   </action>
 
-  <!-- Rest of the steps here  -->
-
-
+  <!-- Rest of the steps here -->
 
   <kill name="kill_job">
     <message>Job failed</message>
