@@ -4,8 +4,8 @@
   become: true
   # Roles to be executed on these hosts
   roles:
-  - role: nifi
-    tags: nifi
+    - role: nifi
+      tags: nifi
 
-  - role: kafka
-    tags: kafka
+    - role: kafka
+      tags: kafka
