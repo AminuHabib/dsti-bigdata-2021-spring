@@ -69,7 +69,7 @@ In the `nifi-kafka` directory, you will find:
 
 1. Take a look at the [`Vagrantfile`](Vagrantfile) and at the YAML files [`playbooks/run.yml`](playbooks/run.yml) and [`playbooks/nifi/tasks/main.yml`](playbooks/roles/nifi/tasks/main.yml)
 2. Create and provision the VM
-   1. Run the `vagrant up` command
+   1. Run the `vagrant up --provider virtualbox` command
    2. You should end up with the following error (this is planned):
       ```shell
       TASK [nifi : Start NiFi service] ***********************************************
