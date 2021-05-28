@@ -1,16 +1,21 @@
 ---
 - name: Download Kafka 2.1.0 binaries
   get_url:
-  # COMPLETE HERE
+    url: https://archive.apache.org/dist/kafka/2.1.0/kafka_2.11-2.1.0.tgz
+    dest: /tmp/kafka_2.11-2.1.0.tgz
 
 - name: Unpack Kafka binaries
   unarchive:
-  # COMPLETE HERE
+    src: /tmp/kafka_2.11-2.1.0.tgz
+    dest: /usr
+    remote_src: yes
 
 - name: Start Zookeeper
   command:
-  # COMPLETE HERE
+    cmd: bin/zookeeper-server-start.sh -daemon config/zookeeper.properties
+    chdir: /usr/kafka_2.11-2.1.0
 
 - name: Start a Kafka broker
   command:
-  # COMPLETE HERE
+    cmd: bin/kafka-server-start.sh -daemon config/server.properties
+    chdir: /usr/kafka_2.11-2.1.0
