@@ -1,0 +1,14 @@
+<coordinator-app name="drivers_ingestion_coord" frequency="0 21 * * *" start="${startDate}T${startHour}Z" end="${endDate}T${endHour}Z" timezone="${timezone}"
+    xmlns="uri:oozie:coordinator:0.5">
+    <action>
+        <workflow>
+            <app-path>${workflowAppPath}</app-path>
+            <configuration>
+                <property>
+                    <name>importDate</name>
+                    <value>${coord:formatTime(coord:dateTzOffset(coord:nominalTime(), timezone), "yyyy-MM-dd")}</value>
+                </property>
+            </configuration>
+        </workflow>
+    </action>
+</coordinator-app>
